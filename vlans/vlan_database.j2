@@ -1,0 +1,19 @@
+system-view
+{%- for vlan in vlans %}
+  vlan {{ vlan[0] }}
+    name {{ vlan[1] }}
+    description {{ vlan[1] }}
+    statistic enable
+    quit
+    {# #}
+  {%- if vlan[2] %}
+  interface vlanif {{ vlan[0] }}
+    description {{ vlan[1] }}
+    statistic enable both
+    undo shutdown
+    quit
+    {# #}
+  {%- endif %}
+{%- endfor %}
+return
+display vlan summary
