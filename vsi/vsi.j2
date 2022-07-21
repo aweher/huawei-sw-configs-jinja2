@@ -1,0 +1,27 @@
+system-view
+{%- for vsi in vsi_list %}
+  vlan {{ vsi[0] }}
+    name {{ vsi[1] }}
+    description {{ vsi[1] }}
+    statistic enable
+    quit
+  
+  vsi vlan{{ vsi[0] }}
+    bgp-ad
+     vpls-id 874:{{ vsi[0] }}
+     vpn-target 874:{{ vsi[0] }} import-extcommunity
+     vpn-target 874:{{ vsi[0] }} export-extcommunity
+     traffic-statistics enable
+    mtu 9216
+    quit
+  
+  interface vlanif {{ vsi[0] }}
+    description {{ vsi[1] }}
+    statistic enable both
+    undo shutdown
+    mtu 9216
+    l2 binding vsi vlan{{ vsi[0] }}
+    quit
+    {# #}
+{%- endfor %}
+return
