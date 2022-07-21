@@ -1,0 +1,16 @@
+---
+HOST_DEFAULT:
+  management_ip: 127.0.0.1
+  ssh_port: 22
+  vsi_list:
+    # id, name, needs_vlanif, needs_vsi
+    - [1, '', True, True]
+    - [10, 'Gestion-Huawei-SDH', True, True]
+    - [51, 'Camaras-Municipalidad', True, True]
+    - [199, 'PPPoE-DD24', True, True]
+    - [200, 'PPPoE-DD24-ZTE', True, True]
+    - [203, 'PPPoE-DD24-Huawei', True, True]
+    - [3010, 'VoIP-SSW-Planex', True, True]
+    - [3102, 'VLAN-PPPoE-Bridge', True, True]
+    - [3507, 'L2-UNNOBA', True, True]
+...

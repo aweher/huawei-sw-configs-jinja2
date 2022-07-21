@@ -3,9 +3,9 @@ HOST_DEFAULT:
   management_ip: 127.0.0.1
   ssh_port: 22
   vlans:
-    # id, name, needs_vlanif
-    - [3000, 'Management', False]
-    - [3001, 'Has-VlanIf', True]
-    - [3002, 'Public', False]
-    - [3010, 'VoIP', False]
+    # id, name, needs_vlanif, needs_vsi
+    - [3000, 'Management', False, False]
+    - [3001, 'Has-VlanIf', True, False]
+    - [3002, 'Public', False, False]
+    - [3010, 'VoIP', False, False]
 ...
