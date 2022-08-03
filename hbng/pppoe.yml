@@ -1,0 +1,27 @@
+---
+HOST_DEFAULT:
+  management_ip: 127.0.0.1
+  ssh_port: 22
+  vlan_list:
+    # vlanid, description
+    - [12, 'PPPoE: Clientes C4 y gestion de IPAMs']
+    - [13, 'PPPoE: Clientes DSLAM Centro']
+    - [15, 'PPPoE: Clientes DSLAMs ZTE C4']
+    - [16, 'PPPoE: Clientes DSLAMs C1']
+    - [60, 'PPPoE: Clientes con ONU Ubiquiti']
+    - [199, 'PPPoE: Clientes OLT DD24']
+    - [200, 'PPPoE: Clientes ZTE DD24']
+    - [201, 'PPPoE: Clientes DD25']
+    - [202, 'PPPoE: Clientes DD23']
+    - [203, 'PPPoE: Clientes DD24']
+    - [204, 'PPPoE: Clientes DD25']
+    - [205, 'PPPoE: Clientes DD43']
+    - [501, 'PPPoE: Clientes DSLAMs Huawei C4']
+    - [502, 'PPPoE: Clientes DSLAMs DD21']
+    - [503, 'PPPoE: Clientes DSLAMs DD35']
+    - [504, 'PPPoE: Clientes DSLAMs DD32']
+    - [2110, 'PPPoE: Testing ClearNet']
+    - [3101, 'PPPoE: Clientes La Rural y Newbery']
+    - [3102, 'PPPoE: Clientes con ONU en modo bridge']
+    - [3100, 'PPPoE: Clientes FTTH Centro']
+...

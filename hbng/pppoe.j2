@@ -1,0 +1,33 @@
+system-view immediately
+{%- for vlan in vlan_list %}
+  vsi BNG_vlan{{ vlan[0] }}
+    bgp-ad
+     vpls-id 874:{{ vlan[0] }}
+     vpn-target 874:{{ vlan[0] }} import-extcommunity
+     vpn-target 874:{{ vlan[0] }} export-extcommunity
+     traffic-statistics enable
+    mtu 9216
+    quit
+  
+  interface Virtual-Ethernet0/1/2.{{ vlan[0] }}
+    description {{ vlan[1] }}
+    statistic enable
+    undo shutdown
+    mtu 9216
+    l2 binding vsi BNG_vlan{{ vlan[0] }}
+    quit
+  
+  interface Virtual-Ethernet0/1/3.{{ vlan[0] }}
+    description {{ vlan[1] }}
+    statistic enable
+    undo shutdown
+    mtu 9216
+    user-vlan {{ vlan[0] }}
+    bas
+    #
+     access-type layer2-subscriber default-domain authentication celpinf
+    #
+    quit
+    {# #}
+{%- endfor %}
+return
